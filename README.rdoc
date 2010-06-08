@@ -1,0 +1,69 @@
+string-utils
+==========
+
+This small extension enables string sanitization in models and controller.
+
+Contains a workaround for Rails sanitize helper that (as any helper) works only in views, allowing you to call my_text.sanitize also in controllers, models and libs.
+
+Provides also a function for making url friendly strings removing all unwanted characters.
+
+Basically it adds some methods and shortcuts to the String class, see the example section for usage.
+
+Works with Rails ~> 2.3.6 and ~> 3.0.0 beta
+
+Install
+=======
+
+Specify it in your Rails project config/environment.rb under the "Rails::Initializer.run do |config|" block
+
+	config.gem 'string-utils', :source => "http://gemcutter.org"
+
+Then install it from the console.
+
+	rake gems:install
+
+
+Or install manually with:
+
+	sudo gem install string-utils --source http://gemcutter.org
+
+
+Examples
+=======
+
+>> my_unsafe_text.sanitize
+Applies the sanitize helper to text.
+Works not only in views but also in models, controllers and libs!
+
+>> my_unsafe_text.san
+Shortcut for my_unsafe_text.sanitize
+
+>> "Fire in the hole: <script>alert('bam!');</script>".san
+=> "Fire in the hole: "
+
+>> "Some tags: <asdasd>an asdasd tag</adsasd>".san
+=> "Some tags: an asdasd tag"
+
+>> my_SAFE_text.hs
+Shortcut for my_SAFE_text.html_safe
+USE WITH CAUTION
+Forces the string to be html safe so it won't be escaped.
+Useful for quick-and-dirty monkey scripting in views.
+
+>> message = "I really need this <script>alert('popup')</script>".hs
+=> "I really need this <script>alert('popup')</script>"
+>> message.html_safe?
+=> true
+
+
+"My really great post".urlify
+=> "my-really-great-post"
+
+"O come l'è GANZA 'sta gemma!".urlify
+=> "o-come-l-e-ganza-sta-gemma"
+
+
+
+
+
+Copyright (c) 2010 Silvio Relli, released under the MIT license
