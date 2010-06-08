@@ -31,36 +31,44 @@ Or install manually with:
 Examples
 =======
 
->> my_unsafe_text.sanitize
 Applies the sanitize helper to text.
 Works not only in views but also in models, controllers and libs!
 
->> my_unsafe_text.san
+	my_unsafe_text.sanitize
+
 Shortcut for my_unsafe_text.sanitize
 
->> "Fire in the hole: <script>alert('bam!');</script>".san
-=> "Fire in the hole: "
+	my_unsafe_text.san
 
->> "Some tags: <asdasd>an asdasd tag</adsasd>".san
-=> "Some tags: an asdasd tag"
 
->> my_SAFE_text.hs
+	"Fire in the hole: <script>alert('bam!');</script>".san
+	"Fire in the hole: "
+
+	"Some tags: <asdasd>an asdasd tag</adsasd>".san
+	"Some tags: an asdasd tag"
+
+
 Shortcut for my_SAFE_text.html_safe
 USE WITH CAUTION
 Forces the string to be html safe so it won't be escaped.
 Useful for quick-and-dirty monkey scripting in views.
-
->> message = "I really need this <script>alert('popup')</script>".hs
-=> "I really need this <script>alert('popup')</script>"
->> message.html_safe?
-=> true
+	
+	my_SAFE_text.hs
 
 
-"My really great post".urlify
-=> "my-really-great-post"
+	message = "I really need this <script>alert('popup')</script>".hs
+	"I really need this <script>alert('popup')</script>"
+	message.html_safe?
+	true
 
-"O come l'è GANZA 'sta gemma!".urlify
-=> "o-come-l-e-ganza-sta-gemma"
+
+urlify is a function for making url friendly strings removing all unwanted characters.
+
+	"My really great post".urlify
+	"my-really-great-post"
+
+	"O come l'è GANZA 'sta gemma!".urlify
+	"o-come-l-e-ganza-sta-gemma"
 
 
 
