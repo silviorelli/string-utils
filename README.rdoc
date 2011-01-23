@@ -1,5 +1,4 @@
-string-utils
-==========
+=string-utils gem
 
 This small extension enables string sanitization in models and controller.
 
@@ -9,10 +8,11 @@ Provides also a function for making url friendly strings removing all unwanted c
 
 Basically it adds some methods and shortcuts to the String class, see the example section for usage.
 
-Works with Rails ~> 2.3.6 and ~> 3.0.0 beta
+Works with Rails ~> 2.3.6 and ~> 3.0.0
+Tested on Ruby 1.8.7 and 1.9.2
 
-Install
-=======
+
+==Install
 
 Specify it in your Rails project config/environment.rb under the "Rails::Initializer.run do |config|" block
 
@@ -28,8 +28,7 @@ Or install manually with:
 	sudo gem install string-utils --source http://gemcutter.org
 
 
-Examples
-=======
+==Examples
 
 Applies the sanitize helper to text.
 Works not only in views but also in models, controllers and libs!

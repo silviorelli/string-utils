@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('string-utils', '0.1.0') do |p|
+Echoe.new('string-utils', '0.2.0') do |p|
   p.description    = "This small extension enables string sanitization in models and controller. Provides also a function for making url friendly strings removing all unwanted characters."
   p.url            = "http://github.com/silviorelli/string-utils"
   p.author         = "Silvio Relli"

@@ -1,3 +1,4 @@
+# encoding: utf-8
 # Silvio Relli's string_utils gem - released under the MIT License
 class String
   
@@ -23,7 +24,7 @@ class String
   def urlify
     str = self.downcase.gsub(/ /,'-')
     str.gsub!(/À|à|á|Â|â|Ã|ã|Ä|ä/i,'a') 
-    str.gsub!(/È|è|É|é|Ê|ê|Ë|ë/i,'e')
+    str.gsub!(/È|è|É|é|Ê|ê|Ë|ë|&/i,'e')
     str.gsub!(/Ì|ì|í|Î|î/i,'i')
     str.gsub!(/Ò|ò|ó|Ô|ô|Õ|õ|Ö|ö/i,'o')
     str.gsub!(/Ù|ù|ú|Û|û|Ü|ü/i,'u')
