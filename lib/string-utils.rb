@@ -7,18 +7,10 @@ class String
   def sanitize
     ActionController::Base.helpers.sanitize(self)
   end
-  
-  # Ensures the string is sanitized and html safe,
-  # so it won't be escaped by xss protection and erubis in rails >=2.3.6 and >=3.0.
-  def san
-    self.sanitize
-  end
-  
-  # Just a shortcut to force a string to be html safe.
-  # Use with caution.
-  def hs
-    self.html_safe
-  end
+
+  # Shortcuts
+  alias :san :sanitize
+  alias :hs :html_safe
   
   # Makes strings be url-friendly
   def urlify
